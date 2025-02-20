@@ -24,6 +24,8 @@ public:
 private:
 	std::unique_ptr<Scene> scene_;
 
+	std::shared_ptr<CommonData> commonData_;
+
 public:
 	void Update();
 	void Draw() const;

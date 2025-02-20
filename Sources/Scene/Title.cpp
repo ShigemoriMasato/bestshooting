@@ -1,4 +1,5 @@
 ﻿#include "Title.h"
+#include "Play.h"
 
 Title::Title(std::shared_ptr<CommonData> commonData) : Scene(commonData) {
 	Initialize();
@@ -14,7 +15,6 @@ std::unique_ptr<Scene> Title::Update() {
 
 	return nullptr;
 	
-	//シーン移行するとき
 	//return std::make_unique<Play>(commonData_);
 }
 

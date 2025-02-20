@@ -1,4 +1,6 @@
 #include <Novice.h>
+#include "Sources/Common/Camera.h"
+#include "Sources/Scene/Common/SceneManager.h"
 
 const char kWindowTitle[] = "学籍番号";
 
@@ -8,7 +10,9 @@ const char kWindowTitle[] = "学籍番号";
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
 	// ライブラリの初期化
-	Novice::Initialize(kWindowTitle, 1280, 720);
+	Novice::Initialize(kWindowTitle, WinSizeWidth, WinSizeHeight);
+
+	std::unique_ptr<SceneManager> sceneManager = std::make_unique<SceneManager>();
 
 	// キー入力結果を受け取る箱
 	char keys[256] = {0};
@@ -26,7 +30,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		///
 		/// ↓更新処理ここから
 		///
-
+		sceneManager->Update();
 		///
 		/// ↑更新処理ここまで
 		///
@@ -34,7 +38,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		///
 		/// ↓描画処理ここから
 		///
-
+		sceneManager->Draw();
 		///
 		/// ↑描画処理ここまで
 		///
