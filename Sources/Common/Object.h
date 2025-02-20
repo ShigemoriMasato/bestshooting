@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include "Polygon.h"
 #include "Vector.h"
 #include <vector>
@@ -16,30 +16,30 @@ enum class ObjectType {
 class Object : public Polygon {
 public:
     /// <summary>
-	/// 32*32‚ÌlŠpŒ`‚ğì¬‚·‚é
+	/// 32*32ã®å››è§’å½¢ã‚’ä½œæˆã™ã‚‹
     /// </summary>
     Object();
 
     /// <summary>
-    /// Object‚ğì¬‚·‚é
+    /// Objectã‚’ä½œæˆã™ã‚‹
     /// </summary>
-    /// <param name="size">Object‚ÌŠO˜g</param>
-    /// <param name="fillMode">“à‘¤‚ğ–„‚ß‚é‚©‚Ç‚¤‚©</param>
-    /// <param name="type">ƒvƒŠƒZƒbƒg‚ğg—p‚µ‚È‚¢ê‡‚Ícustom</param>
-    /// <param name="localPositions">custom‚Ìê‡‚ÍŠe“_‚ÌÀ•WA‚»‚êˆÈŠO‚Í{}‚ğ“ü—Í</param>
+    /// <param name="size">Objectã®å¤–æ </param>
+    /// <param name="fillMode">å†…å´ã‚’åŸ‹ã‚ã‚‹ã‹ã©ã†ã‹</param>
+    /// <param name="type">ãƒ—ãƒªã‚»ãƒƒãƒˆã‚’ä½¿ç”¨ã—ãªã„å ´åˆã¯custom</param>
+    /// <param name="localPositions">customã®å ´åˆã¯å„ç‚¹ã®åº§æ¨™ã€ãã‚Œä»¥å¤–ã¯{}ã‚’å…¥åŠ›</param>
     Object(const Vector2& size, FillMode fillMode, ObjectType type = ObjectType::kQuad, const std::vector<Vector2>& localPositions = {});
     virtual ~Object() = default;
 
-    void Ready(MatrixType type, int bright = 255, const Camera& camera);
+    void Ready(MatrixType type, const Camera& camera, int bright = 255);
 
     virtual void Draw();
 
 private:
     void Initialize(const Vector2& size, FillMode fillMode, ObjectType type, const std::vector<Vector2>& localPositions);
 
-    std::vector<Vector2> npos_;  // ³‹K‰»‚³‚ê‚½ƒ[ƒJƒ‹À•W
-    std::vector<Vector2> spos_;      // •ÏŠ·‚³‚ê‚½ƒXƒNƒŠ[ƒ“À•W
-    Vector2 smidPos_;              // ƒXƒNƒŠ[ƒ“ã‚Ì’†SˆÊ’u
+    std::vector<Vector2> npos_;  // æ­£è¦åŒ–ã•ã‚ŒãŸãƒ­ãƒ¼ã‚«ãƒ«åº§æ¨™
+    std::vector<Vector2> spos_;      // å¤‰æ›ã•ã‚ŒãŸã‚¹ã‚¯ãƒªãƒ¼ãƒ³åº§æ¨™
+    Vector2 smidPos_;              // ã‚¹ã‚¯ãƒªãƒ¼ãƒ³ä¸Šã®ä¸­å¿ƒä½ç½®
 
     ObjectType type_;
     FillMode fillMode_;

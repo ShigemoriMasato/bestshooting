@@ -13,7 +13,6 @@ public:
 	void Draw() const override;
 
 private:
-
 	//使用するオブジェクトをここに書く
 
 };

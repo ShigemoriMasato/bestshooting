@@ -1,7 +1,7 @@
-#pragma once
+ï»¿#pragma once
 #include "Vector.h"
-#define WinSizeWidth 1280		//‰æ–Ê‚Ì‰¡•
-#define WinSizeHeight 720		//‰æ–Ê‚Ìc•
+#define WinSizeWidth 1280		//ç”»é¢ã®æ¨ªå¹…
+#define WinSizeHeight 720		//ç”»é¢ã®ç¸¦å¹…
 
 class Camera {
 public:

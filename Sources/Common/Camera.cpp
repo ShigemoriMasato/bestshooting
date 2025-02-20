@@ -1,4 +1,4 @@
-#include "Camera.h"
+ï»¿#include "Camera.h"
 
 using namespace MakeMatrix;
 
@@ -6,6 +6,8 @@ Camera::Camera() {
 	pos_ = Vector2(640.0f, 360.0f);
 	scale_ = Vector2(1, 1);
 	theta_ = 0;
+	matrix_ = {};
+	Update();
 }
 
 void Camera::Update() {
@@ -21,7 +23,7 @@ Matrix3x3 Camera::MakeViewMatrix() const {
 }
 
 /// <summary>
-/// ‰æ–Ê‚Ì’†‰›‚ğƒY[ƒ€‚·‚é‚±‚Æ‚µ‚©‚Å‚«‚È‚¢B•ÏX‚·‚é‚É‚Ípos_‚ğl—¶‚µ‚½s—ñ‚ğì¬‚·‚éB¡‚Í‚ß‚ñ‚Ç‚­‚³‚¢‚Ì‚Å‚µ‚È‚¢
+/// ç”»é¢ã®ä¸­å¤®ã‚’ã‚ºãƒ¼ãƒ ã™ã‚‹ã“ã¨ã—ã‹ã§ããªã„ã€‚å¤‰æ›´ã™ã‚‹ã«ã¯pos_ã‚’è€ƒæ…®ã—ãŸè¡Œåˆ—ã‚’ä½œæˆã™ã‚‹ã€‚ä»Šã¯ã‚ã‚“ã©ãã•ã„ã®ã§ã—ãªã„
 /// </summary>
 Matrix3x3 Camera::MakeOrthographicProjectionMatrix() const {
 	return {

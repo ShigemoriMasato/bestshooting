@@ -1,4 +1,5 @@
-#include "Object.h"
+ï»¿#include "Object.h"
+#include "Camera.h"
 #include <cmath>
 #include <algorithm>
 
@@ -6,12 +7,12 @@ using namespace MakeMatrix;
 using MT = MatrixType;
 
 namespace {
-    /// Å‘å’·‚ğŠî‚Éƒ|ƒCƒ“ƒg‚ğ³‹K‰»‚µ‚Ü‚·B
+    /// æœ€å¤§é•·ã‚’åŸºã«ãƒã‚¤ãƒ³ãƒˆã‚’æ­£è¦åŒ–ã—ã¾ã™ã€‚
     Vector2 GetShapePoint(float x, float y, float length) {
         return { x / length, y / length };
     }
 
-    /// ³‹K‰»‚Ì‚½‚ß‚ÌÅ‘å’·‚ğŒ©‚Â‚¯‚Ü‚·B
+    /// æ­£è¦åŒ–ã®ãŸã‚ã®æœ€å¤§é•·ã‚’è¦‹ã¤ã‘ã¾ã™ã€‚
     float SearchMaxLength(const std::vector<Vector2>& positions) {
         float maxLength = 0.0f;
         for (const auto& pos : positions) {
@@ -20,7 +21,7 @@ namespace {
                 maxLength = length;
             }
         }
-        return maxLength > 0.0f ? maxLength : 1.0f; // ƒ[ƒœZ‚ğ”ğ‚¯‚é
+        return maxLength > 0.0f ? maxLength : 1.0f; // ã‚¼ãƒ­é™¤ç®—ã‚’é¿ã‘ã‚‹
     }
 }
 
@@ -34,14 +35,14 @@ Object::Object(const Vector2& size, FillMode fillMode, ObjectType type, const st
 	Initialize(size, fillMode, type, localPositions);
 }
 
-void Object::Ready(MatrixType type, int bright, const Camera& camera) {
-
+void Object::Ready(MatrixType type, const Camera& camera, int bright) {
+    
     switch (type) {
     case MT::kSRT:
-        matrix_ = MakeScaleMatrix(scale_) * MakeRotateMatrix(theta_) * MakeTranslateMatrix(pos_) * camera->GetMatrix();
+        matrix_ = MakeScaleMatrix(scale_) * MakeRotateMatrix(theta_) * MakeTranslateMatrix(pos_) * camera.GetMatrix();
         break;
     case MT::kSTR:
-        matrix_ = MakeTranslateMatrix(pos_) * MakeScaleMatrix(scale_) * MakeRotateMatrix(theta_) * camera->GetMatrix();
+        matrix_ = MakeTranslateMatrix(pos_) * MakeScaleMatrix(scale_) * MakeRotateMatrix(theta_) * camera.GetMatrix();
         break;
     case MT::kScreenSRT:
         matrix_ = MakeScaleMatrix(scale_) * MakeRotateMatrix(theta_) * MakeTranslateMatrix(pos_);
@@ -62,6 +63,10 @@ void Object::Ready(MatrixType type, int bright, const Camera& camera) {
 }
 
 void Object::Draw() {
+
+    if (!isActive_) {
+		return;
+    }
 
     Novice::SetBlendMode(blendMode_);
 

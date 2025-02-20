@@ -1,11 +1,11 @@
-#pragma once
+ï»¿#pragma once
 
 class CommonData {
 public:
 	CommonData() = default;
 
 	/// <summary>
-	/// ƒL[“ü—Í‚È‚Ç‚Ìˆ—
+	/// ã‚­ãƒ¼å…¥åŠ›ãªã©ã®å‡¦ç†
 	/// </summary>
 	void Update();
 
