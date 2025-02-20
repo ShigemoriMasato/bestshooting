@@ -1,14 +1,19 @@
 ﻿#pragma once
 #include "Vector.h"
+#include <Novice.h>
 
 class Polygon {
 public:
 
 	Polygon() = default;
 
+	/// <summary>
+	/// RGB,bright,alphaの値をcolor_に当てはめる
+	/// </summary>
+	/// <param name="bright">ワールド全体の明るさ</param>
 	void AdjustColor(int bright = 255);
 
-private:
+protected:
 
 	//座標系
 	Vector2 size_;			//物体の大きさ
@@ -31,7 +36,7 @@ private:
 	unsigned int color_;	//計算後の色
 
 	//フラグ系
-	bool isActive_;			//有効かどうか
-	bool isBlackout_;		//暗転させるか
+	bool isActive_;			//trueのときだけ描画
+	bool isBlackout_;		//AdjustColorの計算にワールド全体の明るさを反映するかどうか
 };
 

@@ -1,4 +1,5 @@
 #include <Novice.h>
+#include "Sources/Common/Camera.h"
 
 const char kWindowTitle[] = "学籍番号";
 
@@ -8,7 +9,7 @@ const char kWindowTitle[] = "学籍番号";
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
 	// ライブラリの初期化
-	Novice::Initialize(kWindowTitle, 1280, 720);
+	Novice::Initialize(kWindowTitle, WinSizeWidth, WinSizeHeight);
 
 	// キー入力結果を受け取る箱
 	char keys[256] = {0};

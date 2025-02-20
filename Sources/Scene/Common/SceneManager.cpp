@@ -3,15 +3,17 @@
 #include "../Title.h"
 #include "../CommonData.h"
 
-SceneManager::SceneManager() {
+SceneManager::SceneManager() : commonData_(std::make_shared<CommonData>()) {
 	//最初のシーンを挿入する
-	scene_ = std::make_unique<Title>(std::make_shared<CommonData>());
+	scene_ = std::make_unique<Title>(commonData_);
 }
 
 SceneManager::~SceneManager() {
 }
 
 void SceneManager::Update() {
+	commonData_->Update();
+
 	//シーン移行する場合はnew Sceneのstd版、それ以外はnullptrが返ってくる
 	std::unique_ptr<Scene> nextScene = scene_->Update();
 

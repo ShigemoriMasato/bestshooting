@@ -50,6 +50,9 @@
     <ClCompile Include="Sources\Scene\Common\Scene.cpp">
       <Filter>Scene\Common</Filter>
     </ClCompile>
+    <ClCompile Include="Sources\Common\Camera.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="C:\KamataEngine\DirectXGame\audio\Audio.h">
@@ -153,6 +156,9 @@
     </ClInclude>
     <ClInclude Include="Sources\Scene\Common\Scene.h">
       <Filter>Scene\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Common\Camera.h">
+      <Filter>Common</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
