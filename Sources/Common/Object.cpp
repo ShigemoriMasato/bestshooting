@@ -6,7 +6,6 @@
 #include <iostream>
 
 using namespace MakeMatrix;
-using MT = MatrixType;
 
 namespace {
     /// 最大長を基にポイントを正規化します。
@@ -126,7 +125,7 @@ void Object::Initialize(const Vector2& size, FillMode fillMode, ObjectType type,
     isApplyCamera_ = true;
 
     blendMode_ = kBlendModeNormal;
-	SetColor(0xffffffff);
+    color_ = 0xffffffff;
 
     switch (type_) {
     case ObjectType::kCircle:

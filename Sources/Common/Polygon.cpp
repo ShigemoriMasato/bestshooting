@@ -5,16 +5,18 @@
 using namespace MakeMatrix;
 
 unsigned int Polygon::AdjustColor(int bright) {
-	int alpha = color_ & 0xff;
-	color_ >>= 8;
+	unsigned int color = color_;
 
-	int blue = color_ & 0xff;
-	color_ >>= 8;
+	float alpha = static_cast<float>(color & 0xff);
+	color >>= 8;
 
-	int green = color_ & 0xff;
-	color_ >>= 8;
+	float blue = static_cast<float>(color & 0xff);
+	color >>= 8;
 
-	int red = color_;
+	float green = static_cast<float>(color & 0xff);
+	color >>= 8;
+
+	float red = static_cast<float>(color);
 
 	float ratio = bright_ / 255.0f;
 
@@ -22,7 +24,7 @@ unsigned int Polygon::AdjustColor(int bright) {
 		ratio *= bright / 255.0f;
 	}
 
-	return static_cast<int>(roundf(alpha)) | (static_cast<int>(roundf(red * ratio)) << 24) | (static_cast<int>(roundf(green * ratio)) << 16) | static_cast<int>(roundf(blue * ratio)) << 8;
+	return (static_cast<int>(roundf(alpha)) | (static_cast<int>(roundf(red * ratio)) << 24) | (static_cast<int>(roundf(green * ratio)) << 16) | static_cast<int>(roundf(blue * ratio)) << 8);
 }
 
 void Polygon::MakeAffineMatrix(const Camera& camera) {

@@ -2,6 +2,8 @@
 #include "Vector.h"
 #include <Novice.h>
 
+class Camera;
+
 class Polygon {
 public:
 

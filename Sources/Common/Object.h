@@ -34,8 +34,6 @@ public:
 
     virtual void Draw() const;
 
-    void SetColor(unsigned int color);
-
 private:
     void Initialize(const Vector2& size, FillMode fillMode, ObjectType type, const std::vector<Vector2>& localPositions);
 
