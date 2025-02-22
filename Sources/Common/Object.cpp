@@ -123,6 +123,7 @@ void Object::Initialize(const Vector2& size, FillMode fillMode, ObjectType type,
     bright_ = 255;
     isActive_ = true;
 	isBlackout_ = true;
+    isApplyCamera_ = true;
 
     blendMode_ = kBlendModeNormal;
 	SetColor(0xffffffff);

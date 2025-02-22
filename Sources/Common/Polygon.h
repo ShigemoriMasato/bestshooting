@@ -40,6 +40,7 @@ protected:
 	//フラグ系
 	bool isActive_{};			//trueのときだけ描画
 	bool isBlackout_{};			//AdjustColorの計算にワールド全体の明るさを反映するかどうか
+	bool isApplyCamera_{};		//Cameraを適用するかどうか
 
 private:
 	Matrix3x3 matrix_{};		//あらゆるパラメータをもとに作成する行列

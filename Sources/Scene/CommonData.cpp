@@ -1,7 +1,10 @@
 #include "CommonData.h"
 #include <Novice.h>
+#include <memory>
 
 void CommonData::Update() {
-	memcpy(preKeys, keys, 256);
+	std::copy(std::begin(keys), std::end(keys), std::begin(preKeys));
 	Novice::GetHitKeyStateAll(keys);
+
+	camera.Update();
 }

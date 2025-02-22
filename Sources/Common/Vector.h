@@ -1,12 +1,5 @@
 ﻿#pragma once
 
-enum MatrixType {
-    kSRT,
-    kSTR,
-    kScreenSRT,
-    kScreenSTR
-};
-
 struct Matrix3x3;
 
 struct Vector2 {

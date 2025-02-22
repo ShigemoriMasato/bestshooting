@@ -26,7 +26,12 @@ unsigned int Polygon::AdjustColor(int bright) {
 }
 
 void Polygon::MakeAffineMatrix(const Camera& camera) {
-	matrix_ = MakeScaleMatrix(scale_) * MakeRotateMatrix(theta_) * MakeTranslateMatrix(pos_) * camera.GetMatrix();
+
+	if (isApplyCamera_) {
+		matrix_ = MakeScaleMatrix(scale_) * MakeRotateMatrix(theta_) * MakeTranslateMatrix(pos_) * camera.GetMatrix();
+	} else {
+		matrix_ = MakeScaleMatrix(scale_) * MakeRotateMatrix(theta_) * MakeTranslateMatrix(pos_);
+	}
 }
 
 Vector2 Polygon::ApplyPosition(const Vector2& pos) {
