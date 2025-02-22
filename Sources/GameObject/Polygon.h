@@ -1,8 +1,7 @@
-﻿#pragma once
-#include "Vector.h"
+#pragma once
+#include "../Common/Vector.h"
+#include "../Common/Camera.h"
 #include <Novice.h>
-
-class Camera;
 
 class Polygon {
 public:

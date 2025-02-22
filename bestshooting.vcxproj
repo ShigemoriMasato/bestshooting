@@ -111,10 +111,11 @@ xcopy C:\KamataEngine\DirectXGame\Resources "$(OutDirFullPath)NoviceResources" /
     <ClCompile Include="C:\KamataEngine\Adapter\Novice.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Sources\Common\Camera.cpp" />
-    <ClCompile Include="Sources\Common\Object.cpp" />
-    <ClCompile Include="Sources\Common\Polygon.cpp" />
     <ClCompile Include="Sources\Common\Vector.cpp" />
+    <ClCompile Include="Sources\GameObject\Mapchip\Mapchip.cpp" />
+    <ClCompile Include="Sources\GameObject\Object.cpp" />
     <ClCompile Include="Sources\GameObject\Player.cpp" />
+    <ClCompile Include="Sources\GameObject\Polygon.cpp" />
     <ClCompile Include="Sources\Scene\CommonData.cpp" />
     <ClCompile Include="Sources\Scene\Common\Scene.cpp" />
     <ClCompile Include="Sources\Scene\Common\SceneManager.cpp" />
@@ -153,10 +154,11 @@ xcopy C:\KamataEngine\DirectXGame\Resources "$(OutDirFullPath)NoviceResources" /
     <ClInclude Include="C:\KamataEngine\DirectXGame\scene\GameScene.h" />
     <ClInclude Include="C:\KamataEngine\Adapter\Novice.h" />
     <ClInclude Include="Sources\Common\Camera.h" />
-    <ClInclude Include="Sources\Common\Object.h" />
-    <ClInclude Include="Sources\Common\Polygon.h" />
     <ClInclude Include="Sources\Common\Vector.h" />
+    <ClInclude Include="Sources\GameObject\Mapchip\Mapchip.h" />
+    <ClInclude Include="Sources\GameObject\Object.h" />
     <ClInclude Include="Sources\GameObject\Player.h" />
+    <ClInclude Include="Sources\GameObject\Polygon.h" />
     <ClInclude Include="Sources\Scene\CommonData.h" />
     <ClInclude Include="Sources\Scene\Common\Scene.h" />
     <ClInclude Include="Sources\Scene\Common\SceneManager.h" />
@@ -165,6 +167,9 @@ xcopy C:\KamataEngine\DirectXGame\Resources "$(OutDirFullPath)NoviceResources" /
     <ClInclude Include="Sources\Scene\Play\PlayData.h" />
     <ClInclude Include="Sources\Scene\Play\PlayScene.h" />
     <ClInclude Include="Sources\Scene\Title.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".editorconfig" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
