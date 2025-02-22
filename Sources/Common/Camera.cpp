@@ -23,7 +23,7 @@ Matrix3x3 Camera::MakeViewMatrix() const {
 }
 
 /// <summary>
-/// 画面の中央をズームすることしかできない。変更するにはpos_を考慮した行列を作成する。今はめんどくさいのでしない
+/// 画面の中央をズームすることしかできない。変更するにはmidpos_を考慮した行列を作成する。今はめんどくさいのでしない
 /// </summary>
 Matrix3x3 Camera::MakeOrthographicProjectionMatrix() const {
 	return {

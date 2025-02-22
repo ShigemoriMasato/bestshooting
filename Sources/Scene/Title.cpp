@@ -1,5 +1,5 @@
 ﻿#include "Title.h"
-#include "Play.h"
+#include "Game.h"
 
 Title::Title(std::shared_ptr<CommonData> commonData) : Scene(commonData) {
 	Initialize();

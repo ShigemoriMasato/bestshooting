@@ -30,18 +30,22 @@ public:
     Object(const Vector2& size, FillMode fillMode, ObjectType type = ObjectType::kQuad, const std::vector<Vector2>& localPositions = {});
     virtual ~Object() = default;
 
-    void Ready(MatrixType type, const Camera& camera, int bright = 255);
+    void Ready(const Camera& camera, int bright = 255);
 
-    virtual void Draw();
+    virtual void Draw() const;
+
+    void SetColor(unsigned int color);
 
 private:
     void Initialize(const Vector2& size, FillMode fillMode, ObjectType type, const std::vector<Vector2>& localPositions);
 
-    std::vector<Vector2> npos_;  // 正規化されたローカル座標
-    std::vector<Vector2> spos_;      // 変換されたスクリーン座標
-    Vector2 smidPos_;              // スクリーン上の中心位置
+    std::vector<Vector2> npos_;         // 正規化されたローカル座標
+    std::vector<Vector2> spos_;         // 変換されたスクリーン座標
+    Vector2 smidPos_;                   // スクリーン上の中心位置
 
-    ObjectType type_;
-    FillMode fillMode_;
-	BlendMode blendMode_;
+	ObjectType type_;                   // オブジェクトの形状
+	FillMode fillMode_;                 // 塗りつぶしの有無
+	BlendMode blendMode_;               // ブレンドモード
+
+    unsigned int sColor_;               //スクリーンに描画する用の色
 };

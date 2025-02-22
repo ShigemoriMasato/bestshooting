@@ -2,6 +2,8 @@
 #include "Camera.h"
 #include <cmath>
 #include <algorithm>
+#include <cassert>
+#include <iostream>
 
 using namespace MakeMatrix;
 using MT = MatrixType;
@@ -35,34 +37,20 @@ Object::Object(const Vector2& size, FillMode fillMode, ObjectType type, const st
 	Initialize(size, fillMode, type, localPositions);
 }
 
-void Object::Ready(MatrixType type, const Camera& camera, int bright) {
-    
-    switch (type) {
-    case MT::kSRT:
-        matrix_ = MakeScaleMatrix(scale_) * MakeRotateMatrix(theta_) * MakeTranslateMatrix(pos_) * camera.GetMatrix();
-        break;
-    case MT::kSTR:
-        matrix_ = MakeTranslateMatrix(pos_) * MakeScaleMatrix(scale_) * MakeRotateMatrix(theta_) * camera.GetMatrix();
-        break;
-    case MT::kScreenSRT:
-        matrix_ = MakeScaleMatrix(scale_) * MakeRotateMatrix(theta_) * MakeTranslateMatrix(pos_);
-        break;
-    case MT::kScreenSTR:
-        matrix_ = MakeTranslateMatrix(pos_) * MakeScaleMatrix(scale_) * MakeRotateMatrix(theta_);
-        break;
-    }
-    
+void Object::Ready(const Camera& camera, int bright) {
+
+	MakeAffineMatrix(camera);
+
     for (int i = 0; i < npos_.size(); i++) {
-        spos_[i] = Vector2(npos_[i].x * size_.x, npos_[i].y * size_.y) * matrix_;
+		spos_[i] = ApplyPosition(npos_[i] * size_);
     }
 
-    smidPos_ = Vector2(0, 0) * matrix_;
+	smidPos_ = ApplyPosition({ 0.0f, 0.0f });
 
-    AdjustColor(bright);
-
+    sColor_ = AdjustColor(bright);
 }
 
-void Object::Draw() {
+void Object::Draw() const {
 
     if (!isActive_) {
 		return;
@@ -75,7 +63,7 @@ void Object::Draw() {
 
         Novice::DrawEllipse(static_cast<int>(smidPos_.x), static_cast<int>(smidPos_.y),
             static_cast<int>(size_.x), static_cast<int>(size_.y), theta_,
-            color_, fillMode_);
+            sColor_, fillMode_);
 
         break;
 
@@ -83,7 +71,7 @@ void Object::Draw() {
 
         Novice::DrawLine(static_cast<int>(spos_[0].x), static_cast<int>(spos_[0].y),
             static_cast<int>(spos_[1].x), static_cast<int>(spos_[1].y),
-            color_);
+            sColor_);
 
         break;
 
@@ -92,30 +80,31 @@ void Object::Draw() {
         if (fillMode_ == kFillModeSolid) {
             for (int i = 1; i < spos_.size(); i++) {
 
-                Novice::DrawTriangle(static_cast<int>(smidPos_.x), static_cast<int>(smidPos_.y),
-                    static_cast<int>(spos_[i - 1].x), static_cast<int>(spos_[i - 1].y),
-                    static_cast<int>(spos_[i].x), static_cast<int>(spos_[i].y),
-                    color_, kFillModeSolid);
+                Novice::DrawTriangle(static_cast<int>(roundf(smidPos_.x)), static_cast<int>(roundf(smidPos_.y)),
+                    static_cast<int>(roundf(spos_[i - 1].x)), static_cast<int>(roundf(spos_[i - 1].y)),
+                    static_cast<int>(roundf(spos_[i].x)), static_cast<int>(roundf(spos_[i].y)),
+                    sColor_, kFillModeSolid);
 
             }
 
             Novice::DrawTriangle(static_cast<int>(smidPos_.x), static_cast<int>(smidPos_.y),
                 static_cast<int>(spos_[spos_.size() - 1].x), static_cast<int>(spos_[spos_.size() - 1].y),
                 static_cast<int>(spos_[0].x), static_cast<int>(spos_[0].y),
-                color_, kFillModeSolid);
+                sColor_, kFillModeSolid);
 
         } else {
+
             for (int i = 1; i < spos_.size(); i++) {
 
                 Novice::DrawLine(static_cast<int>(spos_[i - 1].x), static_cast<int>(spos_[i - 1].y),
                     static_cast<int>(spos_[i].x), static_cast<int>(spos_[i].y),
-                    color_);
+                    sColor_);
 
             }
 
             Novice::DrawLine(static_cast<int>(spos_[spos_.size() - 1].x), static_cast<int>(spos_[spos_.size() - 1].y),
                 static_cast<int>(spos_[0].x), static_cast<int>(spos_[0].y),
-                color_);
+                sColor_);
         }
 
         break;
@@ -126,8 +115,17 @@ void Object::Draw() {
 
 void Object::Initialize(const Vector2& size, FillMode fillMode, ObjectType type, const std::vector<Vector2>& localPositions) {
     size_ = size;
+    scale_ = { 1.0f, 1.0f };
+
     fillMode_ = fillMode;
     type_ = type;
+	
+    bright_ = 255;
+    isActive_ = true;
+	isBlackout_ = true;
+
+    blendMode_ = kBlendModeNormal;
+	SetColor(0xffffffff);
 
     switch (type_) {
     case ObjectType::kCircle:

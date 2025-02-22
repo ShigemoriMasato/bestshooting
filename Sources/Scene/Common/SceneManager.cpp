@@ -1,11 +1,12 @@
 ﻿#include "SceneManager.h"
 #include "Scene.h"
-#include "../Play.h"
+#include "../Game.h"
 #include "../CommonData.h"
+#include <Novice.h>
 
 SceneManager::SceneManager() : commonData_(std::make_shared<CommonData>()) {
 	//最初のシーンを挿入する
-	scene_ = std::make_unique<Play>(commonData_);
+	scene_ = std::make_unique<Game>(commonData_);
 }
 
 SceneManager::~SceneManager() {
@@ -23,7 +24,6 @@ void SceneManager::Update() {
 	}
 }
 
-//お試しでconstを付ける。できるだけ更新と描画を分けられるようにする。無理な場合は外す
 void SceneManager::Draw() const {
 	scene_->Draw();
 }

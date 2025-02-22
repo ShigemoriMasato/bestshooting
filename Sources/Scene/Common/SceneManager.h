@@ -20,7 +20,7 @@ public:
 	/// exeが切れるときにやるやつ。メモリ開放が自動なのでぶっちゃけ必要なし
 	/// </summary>
 	~SceneManager();
-
+	CommonData* GetCommonData() { return commonData_.get(); }
 private:
 	std::unique_ptr<Scene> scene_;
 

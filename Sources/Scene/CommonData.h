@@ -1,4 +1,5 @@
 ﻿#pragma once
+#include "../Common/Camera.h"
 
 class CommonData {
 public:
@@ -11,5 +12,7 @@ public:
 
 	char keys[256] = { 0 };
 	char preKeys[256] = { 0 };
+
+	Camera camera{};
 };
 
