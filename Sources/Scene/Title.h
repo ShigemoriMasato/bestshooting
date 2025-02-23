@@ -1,5 +1,6 @@
-﻿#pragma once
+#pragma once
 #include "Common/Scene.h"
+#include "../GameObject/Cursol.h"
 #include <memory>
 
 class Title : public Scene {
@@ -14,5 +15,5 @@ public:
 
 private:
 	//使用するオブジェクトをここに書く
-
+	Cursol cursol_;
 };

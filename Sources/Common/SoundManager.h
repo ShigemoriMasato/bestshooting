@@ -7,6 +7,7 @@ enum class BGM {
 };
 
 enum class SE {
+	PrivateTime,
 
 	AllCount
 };

@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include "PlayScene.h"
 #include"../../GameObject/Player.h"
 
@@ -16,5 +16,8 @@ private:
 
 	//使用するオブジェクトをここに書く
 	Player player_;
+	Vector2 cpos_;		//Cameraのポジション
+	Vector2 cscale_;	//Cameraの拡大率
+	float ctheta_;		//Cameraの回転角度
 
 };

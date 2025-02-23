@@ -1,12 +1,12 @@
 #include "SceneManager.h"
 #include "Scene.h"
-#include "../Game.h"
+#include "../Title.h"
 #include "../CommonData.h"
 #include <Novice.h>
 
 SceneManager::SceneManager() : commonData_(std::make_shared<CommonData>()) {
 	//最初のシーンを挿入する
-	scene_ = std::make_unique<Game>(commonData_);
+	scene_ = std::make_unique<Title>(commonData_);
 }
 
 SceneManager::~SceneManager() {

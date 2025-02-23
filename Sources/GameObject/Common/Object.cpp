@@ -29,9 +29,7 @@ Object::Object() {
 	Initialize({32, 32}, kFillModeSolid, ObjectType::kQuad, {});
 }
 
-Object::Object(const Vector2& size, FillMode fillMode, ObjectType type, const std::vector<Vector2>& localPositions):
-	npos_(localPositions),
-	type_(type) {
+Object::Object(const Vector2& size, FillMode fillMode, ObjectType type, const std::vector<Vector2>& localPositions) {
 	Initialize(size, fillMode, type, localPositions);
 }
 
@@ -40,7 +38,7 @@ void Object::Ready(const Camera& camera, int bright) {
 	MakeAffineMatrix(camera);
 
     for (int i = 0; i < npos_.size(); i++) {
-		spos_[i] = ApplyPosition(npos_[i] * size_);
+		spos_[i] = ApplyPosition(npos_[i] * size_ / 2);
     }
 
 	smidPos_ = ApplyPosition({ 0.0f, 0.0f });
@@ -59,16 +57,16 @@ void Object::Draw() const {
     switch (type_) {
     case ObjectType::kCircle:
 
-        Novice::DrawEllipse(static_cast<int>(smidPos_.x), static_cast<int>(smidPos_.y),
-            static_cast<int>(size_.x), static_cast<int>(size_.y), theta_,
+        Novice::DrawEllipse(static_cast<int>(roundf(smidPos_.x)), static_cast<int>(roundf(smidPos_.y)),
+            static_cast<int>(roundf(size_.x)), static_cast<int>(roundf(size_.y)), theta_,
             sColor_, fillMode_);
 
         break;
 
     case ObjectType::kLine:
 
-        Novice::DrawLine(static_cast<int>(spos_[0].x), static_cast<int>(spos_[0].y),
-            static_cast<int>(spos_[1].x), static_cast<int>(spos_[1].y),
+        Novice::DrawLine(static_cast<int>(roundf(spos_[0].x)), static_cast<int>(roundf(spos_[0].y)),
+            static_cast<int>(roundf(spos_[1].x)), static_cast<int>(roundf(spos_[1].y)),
             sColor_);
 
         break;
@@ -85,23 +83,23 @@ void Object::Draw() const {
 
             }
 
-            Novice::DrawTriangle(static_cast<int>(smidPos_.x), static_cast<int>(smidPos_.y),
-                static_cast<int>(spos_[spos_.size() - 1].x), static_cast<int>(spos_[spos_.size() - 1].y),
-                static_cast<int>(spos_[0].x), static_cast<int>(spos_[0].y),
+            Novice::DrawTriangle(static_cast<int>(roundf(smidPos_.x)), static_cast<int>(roundf(smidPos_.y)),
+                static_cast<int>(roundf(spos_[spos_.size() - 1].x)), static_cast<int>(roundf(spos_[spos_.size() - 1].y)),
+                static_cast<int>(roundf(spos_[0].x)), static_cast<int>(roundf(spos_[0].y)),
                 sColor_, kFillModeSolid);
 
         } else {
 
             for (int i = 1; i < spos_.size(); i++) {
 
-                Novice::DrawLine(static_cast<int>(spos_[i - 1].x), static_cast<int>(spos_[i - 1].y),
-                    static_cast<int>(spos_[i].x), static_cast<int>(spos_[i].y),
+                Novice::DrawLine(static_cast<int>(roundf(spos_[i - 1].x)), static_cast<int>(roundf(spos_[i - 1].y)),
+                    static_cast<int>(roundf(spos_[i].x)), static_cast<int>(roundf(spos_[i].y)),
                     sColor_);
 
             }
 
-            Novice::DrawLine(static_cast<int>(spos_[spos_.size() - 1].x), static_cast<int>(spos_[spos_.size() - 1].y),
-                static_cast<int>(spos_[0].x), static_cast<int>(spos_[0].y),
+            Novice::DrawLine(static_cast<int>(roundf(spos_[spos_.size() - 1].x)), static_cast<int>(roundf(spos_[spos_.size() - 1].y)),
+                static_cast<int>(roundf(spos_[0].x)), static_cast<int>(roundf(spos_[0].y)),
                 sColor_);
         }
 
@@ -150,4 +148,8 @@ void Object::Initialize(const Vector2& size, FillMode fillMode, ObjectType type,
     }
 
     spos_.resize(npos_.size());
+}
+
+ObjectType Object::GetType() const {
+	return this->type_;
 }

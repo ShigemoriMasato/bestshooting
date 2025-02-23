@@ -1,6 +1,6 @@
 #pragma once
-#include "../Common/Vector.h"
-#include "../Common/Camera.h"
+#include "../../Common/Vector.h"
+#include "../../Common/Camera.h"
 #include <Novice.h>
 
 class Polygon {

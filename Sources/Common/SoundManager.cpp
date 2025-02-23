@@ -4,6 +4,9 @@
 SoundManager::SoundManager() {
 	preFlugBGM_.resize(static_cast<int>(BGM::AllCount));
 	handleBGM_ = 0;
+
+	SE_.push_back(Novice::LoadAudio("./Resources/SE/privatetime.mp3"));
+	volumeSE_.push_back(0.5f);
 }
 
 void SoundManager::PlayBGM(std::vector<bool>& flug) {

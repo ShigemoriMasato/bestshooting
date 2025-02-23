@@ -15,5 +15,5 @@ public:
 
 protected:
 	std::shared_ptr<PlayData> playData_;
-	std::shared_ptr<CommonData> commonData_;
+	std::shared_ptr<CommonData> cd_;
 };

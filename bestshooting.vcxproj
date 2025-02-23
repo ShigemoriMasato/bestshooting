@@ -113,9 +113,11 @@ xcopy C:\KamataEngine\DirectXGame\Resources "$(OutDirFullPath)NoviceResources" /
     <ClCompile Include="Sources\Common\Camera.cpp" />
     <ClCompile Include="Sources\Common\SoundManager.cpp" />
     <ClCompile Include="Sources\Common\Vector.cpp" />
-    <ClCompile Include="Sources\GameObject\Object.cpp" />
+    <ClCompile Include="Sources\GameObject\Common\Object.cpp" />
+    <ClCompile Include="Sources\GameObject\Common\Polygon.cpp" />
+    <ClCompile Include="Sources\GameObject\Cursol.cpp" />
     <ClCompile Include="Sources\GameObject\Player.cpp" />
-    <ClCompile Include="Sources\GameObject\Polygon.cpp" />
+    <ClCompile Include="Sources\GameObject\UI.cpp" />
     <ClCompile Include="Sources\Scene\CommonData.cpp" />
     <ClCompile Include="Sources\Scene\Common\Scene.cpp" />
     <ClCompile Include="Sources\Scene\Common\SceneManager.cpp" />
@@ -156,9 +158,11 @@ xcopy C:\KamataEngine\DirectXGame\Resources "$(OutDirFullPath)NoviceResources" /
     <ClInclude Include="Sources\Common\Camera.h" />
     <ClInclude Include="Sources\Common\SoundManager.h" />
     <ClInclude Include="Sources\Common\Vector.h" />
-    <ClInclude Include="Sources\GameObject\Object.h" />
+    <ClInclude Include="Sources\GameObject\Common\Object.h" />
+    <ClInclude Include="Sources\GameObject\Common\Polygon.h" />
+    <ClInclude Include="Sources\GameObject\Cursol.h" />
     <ClInclude Include="Sources\GameObject\Player.h" />
-    <ClInclude Include="Sources\GameObject\Polygon.h" />
+    <ClInclude Include="Sources\GameObject\UI.h" />
     <ClInclude Include="Sources\Scene\CommonData.h" />
     <ClInclude Include="Sources\Scene\Common\Scene.h" />
     <ClInclude Include="Sources\Scene\Common\SceneManager.h" />

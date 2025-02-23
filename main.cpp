@@ -2,7 +2,7 @@
 #include "Sources/Common/Camera.h"
 #include "Sources/Scene/Common/SceneManager.h"
 
-const char kWindowTitle[] = "学籍番号";
+const char kWindowTitle[] = "\n";
 
 //Novice標準搭載なのでファイルに格納せず、表層にとりおいてます
 
@@ -22,7 +22,9 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		///
 		/// ↓更新処理ここから
 		///
+		
 		sceneManager->Update();
+
 		///
 		/// ↑更新処理ここまで
 		///
