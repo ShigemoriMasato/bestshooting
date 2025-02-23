@@ -1,4 +1,4 @@
-﻿#include "SceneManager.h"
+#include "SceneManager.h"
 #include "Scene.h"
 #include "../Game.h"
 #include "../CommonData.h"
@@ -25,5 +25,6 @@ void SceneManager::Update() {
 }
 
 void SceneManager::Draw() const {
+	commonData_->Draw();
 	scene_->Draw();
 }
