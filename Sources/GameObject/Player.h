@@ -8,5 +8,5 @@ public:
     void Update(const char* keys, Camera& camera); // keysを引数として受け取る
 
 private:
-    float speed_ = 5.0f;
+    float speed_;
 };

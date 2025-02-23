@@ -1,8 +1,9 @@
 #include "Player.h"
 
 Player::Player()
-    : Object(Vector2(32, 32), kFillModeSolid, ObjectType::kQuad, {}) {
+    : Object(Vector2(8, 8), kFillModeSolid, ObjectType::kQuad, {}) {
     pos_ = { 640, 360 }; // 初期位置を画面中央に設定
+    speed_ = 4.0f;
 }
 
 void Player::Update(const char* keys, Camera& camera) {

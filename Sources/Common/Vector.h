@@ -1,6 +1,26 @@
-﻿#pragma once
+#pragma once
 
 struct Matrix3x3;
+
+struct IVector2 {
+    int x;
+    int y;
+
+    // 演算子オーバーロード
+    IVector2 operator+(const IVector2& vec) const;
+    IVector2 operator-(const IVector2& vec) const;
+    IVector2 operator*(float value) const;
+    IVector2 operator/(float value) const;
+    IVector2 operator*(const IVector2& value) const;
+    IVector2 operator/(const IVector2& value) const;
+
+    IVector2& operator+=(const IVector2& vec);
+    IVector2& operator-=(const IVector2& vec);
+    IVector2& operator*=(float value);
+    IVector2& operator/=(float value);
+    IVector2& operator*=(const IVector2& value);
+    IVector2& operator/=(const IVector2& value);
+};
 
 struct Vector2 {
     float x;

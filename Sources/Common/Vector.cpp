@@ -1,4 +1,4 @@
-﻿#include "Vector.h"
+#include "Vector.h"
 #include <cassert>
 #include <cmath>
 
@@ -7,6 +7,70 @@
 // 0での除算防止をする際、あまりにも小さい数でも演算結果が膨れ上がり、エラーのもとになるため、少ない数でも除外対象とする
 // 
 //=========================================================================================
+
+IVector2 IVector2::operator+(const IVector2& vec) const {
+	return IVector2(x + vec.x, y + vec.y);
+}
+
+IVector2 IVector2::operator-(const IVector2& vec) const {
+	return IVector2(x - vec.x, y - vec.y);
+}
+
+IVector2 IVector2::operator*(float value) const {
+	return IVector2(x * value, y * value);
+}
+
+IVector2 IVector2::operator/(float value) const {
+	assert(std::abs(value) > 1e-5f); //0での除算防止
+	return IVector2(x / value, y / value);
+}
+
+IVector2 IVector2::operator*(const IVector2& vec) const {
+	return IVector2(x * vec.x, y * vec.y);
+}
+
+IVector2 IVector2::operator/(const IVector2& vec) const {
+	assert(std::abs(vec.x) > 1e-5f && std::abs(vec.y) > 1e-5f); //0での除算防止
+	return IVector2(x / vec.x, y / vec.y);
+}
+
+IVector2& IVector2::operator+=(const IVector2& vec) {
+	x += vec.x;
+	y += vec.y;
+	return *this;
+}
+
+IVector2& IVector2::operator-=(const IVector2& vec) {
+	x -= vec.x;
+	y -= vec.y;
+	return *this;
+}
+
+IVector2& IVector2::operator*=(float value) {
+	x *= value;
+	y *= value;
+	return *this;
+}
+
+IVector2& IVector2::operator/=(float value) {
+	assert(std::abs(value) > 1e-5f);
+	x /= value;
+	y /= value;
+	return *this;
+}
+
+IVector2& IVector2::operator*=(const IVector2& vec) {
+	x *= vec.x;
+	y *= vec.y;
+	return *this;
+}
+
+IVector2& IVector2::operator/=(const IVector2& vec) {
+	assert(std::abs(vec.x) > 1e-5f && std::abs(vec.y) > 1e-5f);
+	x /= vec.x;
+	y /= vec.y;
+	return *this;
+}
 
 Vector2 Vector2::operator+(const Vector2& vec) const {
     return Vector2(x + vec.x, y + vec.y);
