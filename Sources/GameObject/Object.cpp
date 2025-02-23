@@ -1,5 +1,4 @@
-﻿#include "Object.h"
-#include "Camera.h"
+#include "Object.h"
 #include <cmath>
 #include <algorithm>
 #include <cassert>

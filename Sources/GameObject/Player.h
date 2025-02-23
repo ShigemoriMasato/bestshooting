@@ -1,5 +1,5 @@
-﻿#pragma once
-#include "../Common/Object.h"
+#pragma once
+#include "Object.h"
 
 class Player : public Object {
 public:
