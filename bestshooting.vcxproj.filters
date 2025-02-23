@@ -38,9 +38,6 @@
     <Filter Include="GameObject\Bullet">
       <UniqueIdentifier>{a0c82204-e615-4f50-bc0b-fd4dd5f11afc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="GameObject\Mapchip">
-      <UniqueIdentifier>{f0b2d943-5dcd-44ac-bdc4-f9f994dd589b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="GameObject\Common">
       <UniqueIdentifier>{4634b3d7-6269-4753-b98f-afe5289ed3f2}</UniqueIdentifier>
     </Filter>
@@ -76,9 +73,6 @@
     </ClCompile>
     <ClCompile Include="Sources\Scene\Title.cpp">
       <Filter>Scene\BigScene</Filter>
-    </ClCompile>
-    <ClCompile Include="Sources\GameObject\Mapchip\Mapchip.cpp">
-      <Filter>GameObject\Mapchip</Filter>
     </ClCompile>
     <ClCompile Include="Sources\GameObject\Object.cpp">
       <Filter>GameObject\Common</Filter>
@@ -204,9 +198,6 @@
     </ClInclude>
     <ClInclude Include="Sources\Scene\Title.h">
       <Filter>Scene\BigScene</Filter>
-    </ClInclude>
-    <ClInclude Include="Sources\GameObject\Mapchip\Mapchip.h">
-      <Filter>GameObject\Mapchip</Filter>
     </ClInclude>
     <ClInclude Include="Sources\GameObject\Object.h">
       <Filter>GameObject\Common</Filter>
