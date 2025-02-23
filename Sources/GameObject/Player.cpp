@@ -1,7 +1,7 @@
-﻿#include "Player.h"
+#include "Player.h"
 
 Player::Player()
-    : Object(Vector2(32, 32), kFillModeSolid, ObjectType::kCircle, {}) {
+    : Object(Vector2(32, 32), kFillModeSolid, ObjectType::kQuad, {}) {
     pos_ = { 640, 360 }; // 初期位置を画面中央に設定
 }
 

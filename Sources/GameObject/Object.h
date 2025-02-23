@@ -1,6 +1,5 @@
-﻿#pragma once
+#pragma once
 #include "Polygon.h"
-#include "Vector.h"
 #include <vector>
 
 class Camera;

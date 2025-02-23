@@ -1,5 +1,5 @@
-﻿#include "Polygon.h"
-#include "Camera.h"
+#include "Polygon.h"
+#include "../Common/Camera.h"
 #include <cmath>
 
 using namespace MakeMatrix;
