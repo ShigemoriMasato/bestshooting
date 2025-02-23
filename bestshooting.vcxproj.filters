@@ -83,6 +83,9 @@
     <ClCompile Include="Sources\GameObject\Player.cpp">
       <Filter>GameObject\Player</Filter>
     </ClCompile>
+    <ClCompile Include="Sources\Common\SoundManager.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="C:\KamataEngine\DirectXGame\audio\Audio.h">
@@ -204,6 +207,9 @@
     </ClInclude>
     <ClInclude Include="Sources\GameObject\Player.h">
       <Filter>GameObject\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Common\SoundManager.h">
+      <Filter>Common</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

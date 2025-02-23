@@ -1,5 +1,6 @@
-﻿#pragma once
+#pragma once
 #include "../Common/Camera.h"
+#include "../Common/SoundManager.h"
 
 class CommonData {
 public:
@@ -14,5 +15,7 @@ public:
 	char preKeys[256] = { 0 };
 
 	Camera camera{};
+
+	SoundManager soundManager;
 };
 
