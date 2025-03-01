@@ -37,4 +37,31 @@ void Polygon::MakeAffineMatrix(const Camera& camera) {
 
 Vector2 Polygon::ApplyPosition(const Vector2& pos) {
 	return pos * matrix_;
+}
+
+
+/*************************************************************************************************
+*
+*		アクセサーメソッド
+*
+**************************************************************************************************/
+
+Vector2 Polygon::GetPos() const {
+	return this->pos_;
 };
+
+Vector2 Polygon::GetScale() const {
+	return this->scale_;
+}
+
+bool Polygon::GetIsActive() const {
+	return this->isActive_;
+}
+
+void Polygon::SetColor(unsigned int color) {
+	this->color_ = color;
+}
+
+Vector2 Polygon::GetSize() const {
+	return this->size_;
+}

@@ -5,8 +5,8 @@ SoundManager::SoundManager() {
 	preFlugBGM_.resize(static_cast<int>(BGM::AllCount));
 	handleBGM_ = 0;
 
-	SE_.push_back(Novice::LoadAudio("./Resources/SE/privatetime.mp3"));
-	volumeSE_.push_back(0.5f);
+	BGM_.push_back(Novice::LoadAudio("./Resources/BGM/privatetime.mp3"));
+	volumeBGM_.push_back(0.5f);
 }
 
 void SoundManager::PlayBGM(std::vector<bool>& flug) {
@@ -23,12 +23,18 @@ void SoundManager::PlayBGM(std::vector<bool>& flug) {
 
 			Novice::StopAudio(handleBGM_);
 
-			handleBGM_ = Novice::PlayAudio(BGM_[i], true, volumeBGM_[i]);
+			handleBGM_ = Novice::PlayAudio(BGM_[i], false, volumeBGM_[i]);
 		}
 
-		if (!flug[i] && preFlugBGM_[i]) {
+		else if (!flug[i] && preFlugBGM_[i]) {
 			preFlugBGM_[i] = false;
 			Novice::StopAudio(handleBGM_);
+		}
+	}
+
+	if (!Novice::IsPlayingAudio(handleBGM_)) {
+		for (int i = 0; i < flug.size(); i++) {
+			flug[i] = false;
 		}
 	}
 }
@@ -42,4 +48,8 @@ void SoundManager::PlaySE(std::vector<bool>& flug) {
 			flug[i] = false;
 		}
 	}
+}
+
+int SoundManager::GetHandleBGM() const {
+	return handleBGM_;
 }

@@ -13,6 +13,10 @@ void CommonData::Update() {
 	std::copy(std::begin(keys), std::end(keys), std::begin(preKeys));
 	Novice::GetHitKeyStateAll(keys);
 
+	for (int i = 0; i < 8; i++) {
+		click[i] = Novice::IsPressMouse(i);
+	}
+
 	camera.Update();
 }
 

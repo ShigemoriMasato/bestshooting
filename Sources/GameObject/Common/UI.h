@@ -1,5 +1,5 @@
 #pragma once
-#include "Common/Object.h"
+#include "Object.h"
 
 class UI : public Object {
 public:
@@ -7,10 +7,15 @@ public:
 	UI(Vector2 pos, Vector2 size, ObjectType type);
 	~UI() = default;
 
+	virtual void Update(Camera& camera) = 0;
+
 	bool CollitionChecker(Vector2 pos);
 
-private:
+	bool GetIsClicked() const;
+
+protected:
 
 	bool isHit_;			//カーソルが当たっているかどうか
-	bool isclicked_;		//クリックされたかどうか
+	bool isClicked_;		//クリックされたかどうか
+
 };

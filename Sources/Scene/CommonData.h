@@ -19,6 +19,10 @@ public:
 	char keys[256] = { 0 };
 	char preKeys[256] = { 0 };
 
+	int sceneNumber = -1;
+
+	bool click[8] = { 0 };
+
 	std::vector<bool> flugBGM_;
 	std::vector<bool> flugSE_;
 

@@ -26,6 +26,14 @@ public:
 	/// <param name="pos">spos_</param>
 	Vector2 ApplyPosition(const Vector2& pos);
 
+	/****************************アクセサーメソッド******************************/
+	Vector2 GetPos() const;
+	Vector2 GetSize() const;
+	Vector2 GetScale() const;
+	bool GetIsActive() const;
+
+	void SetColor(unsigned int value);
+
 protected:
 
 	//座標系

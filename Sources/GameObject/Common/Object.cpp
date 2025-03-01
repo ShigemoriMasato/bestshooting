@@ -58,7 +58,7 @@ void Object::Draw() const {
     case ObjectType::kCircle:
 
         Novice::DrawEllipse(static_cast<int>(roundf(smidPos_.x)), static_cast<int>(roundf(smidPos_.y)),
-            static_cast<int>(roundf(size_.x)), static_cast<int>(roundf(size_.y)), theta_,
+            static_cast<int>(roundf(size_.x * scale_.x)), static_cast<int>(roundf(size_.y * scale_.y)), theta_,
             sColor_, fillMode_);
 
         break;
@@ -152,4 +152,12 @@ void Object::Initialize(const Vector2& size, FillMode fillMode, ObjectType type,
 
 ObjectType Object::GetType() const {
 	return this->type_;
+}
+
+void Object::SetBlendMode(BlendMode blendMode) {
+    this->blendMode_ = blendMode;
+}
+
+void Object::SetFillMode(FillMode value) {
+	this->fillMode_ = value;
 }

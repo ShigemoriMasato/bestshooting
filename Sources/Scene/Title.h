@@ -1,6 +1,7 @@
 #pragma once
 #include "Common/Scene.h"
 #include "../GameObject/Cursol.h"
+#include "../GameObject/Common/UI.h"
 #include <memory>
 
 class Title : public Scene {
@@ -16,4 +17,5 @@ public:
 private:
 	//使用するオブジェクトをここに書く
 	Cursol cursol_;
+	std::vector<std::unique_ptr<UI>> uiList_;
 };

@@ -2,12 +2,12 @@
 #include <vector>
 
 enum class BGM {
+	PrivateTime,
 
 	AllCount
 };
 
 enum class SE {
-	PrivateTime,
 
 	AllCount
 };
@@ -29,6 +29,8 @@ public:
 	/// </summary>
 	/// <param name="flug">commonData.flugSE</param>
 	void PlaySE(std::vector<bool>& flug);
+
+	int GetHandleBGM() const;
 
 private:
 
