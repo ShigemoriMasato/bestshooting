@@ -5,9 +5,8 @@
 #include "Play/Play.h"
 
 Game::Game(std::shared_ptr<CommonData> commonData) : 
-	Scene(commonData), 
-	commonData_(commonData),
-	playData_(std::make_shared<PlayData>()) {
+	Scene(commonData) {
+	playData_ = std::make_shared<PlayData>();
 	scene_ = std::make_unique<Play>(commonData, playData_);
 }
 

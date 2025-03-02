@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include <memory>
 
 class Scene;
@@ -17,13 +17,15 @@ public:
 	SceneManager operator=(const SceneManager&) = delete;
 
 	/// <summary>
-	/// exeが切れるときにやるやつ。メモリ開放が自動なのでぶっちゃけ必要なし
+	/// exeが切れるときにやるやつ。
 	/// </summary>
 	~SceneManager();
 	CommonData* GetCommonData() { return commonData_.get(); }
 private:
+	//なんかしらのシーンのポインタを入れる変数
 	std::unique_ptr<Scene> scene_;
 
+	//共通データのポインタ
 	std::shared_ptr<CommonData> commonData_;
 
 public:

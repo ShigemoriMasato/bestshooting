@@ -14,6 +14,6 @@ public:
 	virtual void Draw() const = 0;
 
 protected:
-	std::shared_ptr<PlayData> playData_;
-	std::shared_ptr<CommonData> commonData_;
+	std::shared_ptr<PlayData> pd;
+	std::shared_ptr<CommonData> cd;
 };
