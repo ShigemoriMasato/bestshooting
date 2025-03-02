@@ -1,6 +1,6 @@
 #pragma once
-#include "../Common/Vector.h"
-#include "../Common/Camera.h"
+#include "../../Common/Vector.h"
+#include "../../Common/Camera.h"
 #include <Novice.h>
 
 class Polygon {
@@ -25,6 +25,14 @@ public:
 	/// </summary>
 	/// <param name="pos">spos_</param>
 	Vector2 ApplyPosition(const Vector2& pos);
+
+	/****************************アクセサーメソッド******************************/
+	Vector2 GetPos() const;
+	Vector2 GetSize() const;
+	Vector2 GetScale() const;
+	bool GetIsActive() const;
+
+	void SetColor(unsigned int value);
 
 protected:
 

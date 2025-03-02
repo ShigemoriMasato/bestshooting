@@ -26,12 +26,18 @@ public:
     /// <param name="fillMode">内側を埋めるかどうか</param>
     /// <param name="type">プリセットを使用しない場合はcustom</param>
     /// <param name="localPositions">customの場合は各点の座標、それ以外は{}を入力</param>
-    Object(const Vector2& size, FillMode fillMode = kFillModeSolid, ObjectType type = ObjectType::kQuad, const std::vector<Vector2>& localPositions = {});
+    Object(const Vector2& size = {}, FillMode fillMode = kFillModeSolid, ObjectType type = ObjectType::kQuad, const std::vector<Vector2>& localPositions = {});
     virtual ~Object() = default;
 
     void Ready(const Camera& camera, int bright = 255);
 
     virtual void Draw() const;
+
+    //アクセサーメソッド
+    ObjectType GetType() const;
+
+    void SetBlendMode(BlendMode value);
+	void SetFillMode(FillMode value);
 
 private:
     void Initialize(const Vector2& size, FillMode fillMode, ObjectType type, const std::vector<Vector2>& localPositions);
