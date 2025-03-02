@@ -15,7 +15,12 @@ void Play::Initialize() {
 
 std::unique_ptr<PlayScene> Play::Update() {
 	//さっきのキー入力とかの処理を呼び出す
-	player_.Update(commonData_->keys, commonData_->camera);
+	player_.Update(cd->keys, cd->camera);
+
+	if (cd->keys[DIK_F] && !cd->preKeys[DIK_F]) {
+		pd->isTitle = true;
+		return nullptr;
+	}
 
 	return nullptr;
 }

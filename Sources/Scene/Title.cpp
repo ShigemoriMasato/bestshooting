@@ -1,4 +1,4 @@
-﻿#include "Title.h"
+#include "Title.h"
 #include "Game.h"
 
 Title::Title(std::shared_ptr<CommonData> commonData) : Scene(commonData) {
@@ -13,9 +13,12 @@ void Title::Initialize() {
 
 std::unique_ptr<Scene> Title::Update() {
 
+	if (cd->keys[DIK_F] && !cd->preKeys[DIK_F]) {
+		return std::make_unique<Game>(cd);
+	}
+
 	return nullptr;
-	
-	//return std::make_unique<Play>(commonData_);
+
 }
 
 void Title::Draw() const {
