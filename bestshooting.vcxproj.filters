@@ -41,6 +41,15 @@
     <Filter Include="GameObject\Common">
       <UniqueIdentifier>{4634b3d7-6269-4753-b98f-afe5289ed3f2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject\Object">
+      <UniqueIdentifier>{29bcdb29-1ef6-43f6-917c-a4922cdb3ec6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObject\Cursol">
+      <UniqueIdentifier>{f686b898-838d-4742-8b30-2fbecea68880}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObject\UI">
+      <UniqueIdentifier>{b7cce357-b6be-4b12-80f9-fa79d88fc0fb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -74,12 +83,6 @@
     <ClCompile Include="Sources\Scene\Title.cpp">
       <Filter>Scene\BigScene</Filter>
     </ClCompile>
-    <ClCompile Include="Sources\GameObject\Object.cpp">
-      <Filter>GameObject\Common</Filter>
-    </ClCompile>
-    <ClCompile Include="Sources\GameObject\Polygon.cpp">
-      <Filter>GameObject\Common</Filter>
-    </ClCompile>
     <ClCompile Include="Sources\Scene\CommonData.cpp">
       <Filter>Scene\BigScene</Filter>
     </ClCompile>
@@ -87,6 +90,39 @@
       <Filter>GameObject\Player</Filter>
     </ClCompile>
     <ClCompile Include="Sources\Common\SoundManager.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\GameObject\Common\HitBoxChecker.cpp">
+      <Filter>GameObject\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\GameObject\Common\Line.cpp">
+      <Filter>GameObject\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\GameObject\Common\Object.cpp">
+      <Filter>GameObject\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\GameObject\Common\Polygon.cpp">
+      <Filter>GameObject\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\GameObject\Common\UI.cpp">
+      <Filter>GameObject\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\GameObject\Cursol.cpp">
+      <Filter>GameObject\Cursol</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\GameObject\WindowUI.cpp">
+      <Filter>GameObject\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\GameObject\Object\FadeLine.cpp">
+      <Filter>GameObject\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\GameObject\Object\NormalLine.cpp">
+      <Filter>GameObject\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\GameObject\Object\NormalObject.cpp">
+      <Filter>GameObject\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Common\MyMath.cpp">
       <Filter>Common</Filter>
     </ClCompile>
   </ItemGroup>
@@ -199,12 +235,6 @@
     <ClInclude Include="Sources\Scene\Title.h">
       <Filter>Scene\BigScene</Filter>
     </ClInclude>
-    <ClInclude Include="Sources\GameObject\Object.h">
-      <Filter>GameObject\Common</Filter>
-    </ClInclude>
-    <ClInclude Include="Sources\GameObject\Polygon.h">
-      <Filter>GameObject\Common</Filter>
-    </ClInclude>
     <ClInclude Include="Sources\Scene\CommonData.h">
       <Filter>Scene\BigScene</Filter>
     </ClInclude>
@@ -212,6 +242,39 @@
       <Filter>GameObject\Player</Filter>
     </ClInclude>
     <ClInclude Include="Sources\Common\SoundManager.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\GameObject\Common\HitBoxChecker.h">
+      <Filter>GameObject\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\GameObject\Common\Line.h">
+      <Filter>GameObject\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\GameObject\Common\Object.h">
+      <Filter>GameObject\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\GameObject\Common\Polygon.h">
+      <Filter>GameObject\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\GameObject\Common\UI.h">
+      <Filter>GameObject\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\GameObject\Cursol.h">
+      <Filter>GameObject\Cursol</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\GameObject\WindowUI.h">
+      <Filter>GameObject\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\GameObject\Object\FadeLine.h">
+      <Filter>GameObject\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\GameObject\Object\NormalLine.h">
+      <Filter>GameObject\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\GameObject\Object\NormalObject.h">
+      <Filter>GameObject\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\Common\MyMath.h">
       <Filter>Common</Filter>
     </ClInclude>
   </ItemGroup>
