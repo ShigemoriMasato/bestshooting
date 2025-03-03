@@ -120,6 +120,7 @@ xcopy C:\KamataEngine\DirectXGame\Resources "$(OutDirFullPath)NoviceResources" /
     <ClCompile Include="Sources\GameObject\Common\Polygon.cpp" />
     <ClCompile Include="Sources\GameObject\Common\UI.cpp" />
     <ClCompile Include="Sources\GameObject\Cursol.cpp" />
+    <ClCompile Include="Sources\GameObject\Mapchip\Mapchip.cpp" />
     <ClCompile Include="Sources\GameObject\Object\FadeLine.cpp" />
     <ClCompile Include="Sources\GameObject\Object\NormalLine.cpp" />
     <ClCompile Include="Sources\GameObject\Object\NormalObject.cpp" />
@@ -172,6 +173,7 @@ xcopy C:\KamataEngine\DirectXGame\Resources "$(OutDirFullPath)NoviceResources" /
     <ClInclude Include="Sources\GameObject\Common\Polygon.h" />
     <ClInclude Include="Sources\GameObject\Common\UI.h" />
     <ClInclude Include="Sources\GameObject\Cursol.h" />
+    <ClInclude Include="Sources\GameObject\Mapchip\Mapchip.h" />
     <ClInclude Include="Sources\GameObject\Object\FadeLine.h" />
     <ClInclude Include="Sources\GameObject\Object\NormalLine.h" />
     <ClInclude Include="Sources\GameObject\Object\NormalObject.h" />

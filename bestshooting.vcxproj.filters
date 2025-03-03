@@ -50,6 +50,9 @@
     <Filter Include="GameObject\UI">
       <UniqueIdentifier>{b7cce357-b6be-4b12-80f9-fa79d88fc0fb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject\Mapchip">
+      <UniqueIdentifier>{533a9903-4d39-4404-a316-da964e0e441c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -124,6 +127,9 @@
     </ClCompile>
     <ClCompile Include="Sources\Common\MyMath.cpp">
       <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\GameObject\Mapchip\Mapchip.cpp">
+      <Filter>GameObject\Mapchip</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -276,6 +282,9 @@
     </ClInclude>
     <ClInclude Include="Sources\Common\MyMath.h">
       <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\GameObject\Mapchip\Mapchip.h">
+      <Filter>GameObject\Mapchip</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
