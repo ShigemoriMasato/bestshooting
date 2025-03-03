@@ -18,9 +18,9 @@ public:
 
 protected:
 
-private:
-
 	vector<vector<ChipKind>> mapchip_;
 	Vector2 chipSize_;
+	int textureHandle_;
 
+private:
 };
