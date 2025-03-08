@@ -125,11 +125,11 @@
     <ClCompile Include="Sources\GameObject\Object\NormalObject.cpp">
       <Filter>GameObject\Object</Filter>
     </ClCompile>
-    <ClCompile Include="Sources\Common\MyMath.cpp">
-      <Filter>Common</Filter>
-    </ClCompile>
     <ClCompile Include="Sources\GameObject\Mapchip\Mapchip.cpp">
       <Filter>GameObject\Mapchip</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\GameObject\Common\Texture.cpp">
+      <Filter>GameObject\Common</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -280,11 +280,11 @@
     <ClInclude Include="Sources\GameObject\Object\NormalObject.h">
       <Filter>GameObject\Object</Filter>
     </ClInclude>
-    <ClInclude Include="Sources\Common\MyMath.h">
-      <Filter>Common</Filter>
-    </ClInclude>
     <ClInclude Include="Sources\GameObject\Mapchip\Mapchip.h">
       <Filter>GameObject\Mapchip</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\GameObject\Common\Texture.h">
+      <Filter>GameObject\Common</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
