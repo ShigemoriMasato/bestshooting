@@ -50,6 +50,10 @@ Vector2 Polygon::GetPos() const {
 	return this->pos_;
 };
 
+Vector2 Polygon::GetSize() const {
+	return this->size_;
+}
+
 Vector2 Polygon::GetScale() const {
 	return this->scale_;
 }
@@ -60,8 +64,4 @@ bool Polygon::GetIsActive() const {
 
 void Polygon::SetColor(unsigned int color) {
 	this->color_ = color;
-}
-
-Vector2 Polygon::GetSize() const {
-	return this->size_;
 }

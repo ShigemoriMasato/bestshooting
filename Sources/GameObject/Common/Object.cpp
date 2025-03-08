@@ -154,10 +154,6 @@ ObjectType Object::GetType() const {
 	return this->type_;
 }
 
-void Object::SetBlendMode(BlendMode blendMode) {
-    this->blendMode_ = blendMode;
-}
-
 void Object::SetFillMode(FillMode value) {
 	this->fillMode_ = value;
 }

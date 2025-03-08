@@ -36,7 +36,6 @@ public:
     //アクセサーメソッド
     ObjectType GetType() const;
 
-    void SetBlendMode(BlendMode value);
 	void SetFillMode(FillMode value);
 
 private:
@@ -48,7 +47,6 @@ private:
 
 	ObjectType type_;                   // オブジェクトの形状
 	FillMode fillMode_;                 // 塗りつぶしの有無
-	BlendMode blendMode_;               // ブレンドモード
 
     unsigned int sColor_;               //スクリーンに描画する用の色
 };

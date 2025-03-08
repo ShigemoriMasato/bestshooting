@@ -23,7 +23,6 @@ private:
 	Vector2 spos_[2];					//screenPos
 	Vector2 direction_;					//始点から終点への単位ベクトル
 	float swidth_;						//screenWidth
-	BlendMode blendMode_;               // ブレンドモード
 
 	unsigned int sColor_;               //スクリーンに描画する用の色
 
