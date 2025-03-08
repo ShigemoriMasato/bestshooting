@@ -21,7 +21,9 @@ public:
 	/// </summary>
 	~SceneManager();
 	CommonData* GetCommonData() { return commonData_.get(); }
+
 private:
+
 	//なんかしらのシーンのポインタを入れる変数
 	std::unique_ptr<Scene> scene_;
 

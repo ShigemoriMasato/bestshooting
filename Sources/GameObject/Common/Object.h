@@ -48,7 +48,6 @@ private:
 
 	ObjectType type_;                   // オブジェクトの形状
 	FillMode fillMode_;                 // 塗りつぶしの有無
-	BlendMode blendMode_;               // ブレンドモード
 
     unsigned int sColor_;               //スクリーンに描画する用の色
 };

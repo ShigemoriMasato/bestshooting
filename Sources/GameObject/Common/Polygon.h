@@ -46,6 +46,8 @@ protected:
 	int bright_{};				//明るさ(0 ~ 255)
 	unsigned int color_{};		//計算後の色
 
+	BlendMode blendMode_;       //ブレンドモード
+
 	//フラグ系
 	bool isActive_{};			//trueのときだけ描画
 	bool isBlackout_{};			//AdjustColorの計算にワールド全体の明るさを反映するかどうか
