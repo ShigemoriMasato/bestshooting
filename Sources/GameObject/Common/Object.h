@@ -36,7 +36,6 @@ public:
     //アクセサーメソッド
     ObjectType GetType() const;
 
-    void SetBlendMode(BlendMode value);
 	void SetFillMode(FillMode value);
 
 private:

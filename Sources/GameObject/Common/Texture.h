@@ -6,9 +6,9 @@ public:
 	Texture();
 	~Texture() = default;
 
-	Texture(int textureHandle = 0, Vector2 size = {});
+	Texture(int textureHandle, Vector2 size);
 
-	void Initialize(int textureHandle, Vector2 size);
+	void Initialize(int textureHandle = 0, Vector2 size = {});
 
 	void Ready(Camera& camera, int bright = 255);
 
