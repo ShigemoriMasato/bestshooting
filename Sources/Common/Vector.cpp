@@ -17,12 +17,12 @@ IVector2 IVector2::operator-(const IVector2& vec) const {
 }
 
 IVector2 IVector2::operator*(float value) const {
-	return IVector2(x * value, y * value);
+	return IVector2(int(x * value), int(y * value));
 }
 
 IVector2 IVector2::operator/(float value) const {
 	assert(std::abs(value) > 1e-5f); //0での除算防止
-	return IVector2(x / value, y / value);
+	return IVector2(int(x / value), int(y / value));
 }
 
 IVector2 IVector2::operator*(const IVector2& vec) const {
@@ -47,15 +47,20 @@ IVector2& IVector2::operator-=(const IVector2& vec) {
 }
 
 IVector2& IVector2::operator*=(float value) {
-	x *= value;
-	y *= value;
-	return *this;
+    IVector2 ans = {
+        int(float(x) * value),
+        int(float(y) * value)
+    };
+
+	*this = ans;
+
+    return *this;
 }
 
 IVector2& IVector2::operator/=(float value) {
 	assert(std::abs(value) > 1e-5f);
-	x /= value;
-	y /= value;
+	x /= int(value);
+	y /= int(value);
 	return *this;
 }
 

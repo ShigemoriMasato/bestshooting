@@ -1,5 +1,6 @@
 #pragma once
 #include "../Common/Object.h"
+#include "Chip.h"
 #include <vector>
 
 using namespace std;
@@ -10,17 +11,14 @@ public:
 	Mapchip();
 	~Mapchip() = default;
 
-	virtual enum ChipKind;
+	void SetMapChip(vector<vector<int>> mapchip);
 
-	void SetMapChip(vector<vector<ChipKind>> mapchip);
-
-	ChipKind GetChipKind(IVector2 pos) const;
+	int GetChipKind(IVector2 pos) const;
 
 protected:
 
-	vector<vector<ChipKind>> mapchip_;
+	vector<vector<int>> mapchip_;
 	Vector2 chipSize_;
 	int textureHandle_;
 
-private:
 };
