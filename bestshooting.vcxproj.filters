@@ -130,13 +130,16 @@
     <ClCompile Include="Sources\GameObject\Common\Chip.cpp">
       <Filter>GameObject\Common</Filter>
     </ClCompile>
-    <ClCompile Include="Sources\GameObject\Common\Mapchip.cpp">
+    <ClCompile Include="Sources\GameObject\Common\MapchipData.cpp">
       <Filter>GameObject\Common</Filter>
     </ClCompile>
     <ClCompile Include="Sources\Common\MyMath.cpp">
       <Filter>Common</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Sources\GameObject\Mapchip\MapchipController.cpp">
+      <Filter>GameObject\Mapchip</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="C:\KamataEngine\DirectXGame\audio\Audio.h">
@@ -292,11 +295,14 @@
     <ClInclude Include="Sources\GameObject\Common\Chip.h">
       <Filter>GameObject\Common</Filter>
     </ClInclude>
-    <ClInclude Include="Sources\GameObject\Common\Mapchip.h">
+    <ClInclude Include="Sources\GameObject\Common\MapchipData.h">
       <Filter>GameObject\Common</Filter>
     </ClInclude>
     <ClInclude Include="Sources\Common\MyMath.h">
       <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Sources\GameObject\Mapchip\MapchipController.h">
+      <Filter>GameObject\Mapchip</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

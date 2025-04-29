@@ -5,11 +5,16 @@
 
 using namespace std;
 
-class Mapchip {
+/// <summary>
+/// CommonMapchip
+/// </summary>
+class MapchipData {
 public:
 
-	Mapchip();
-	~Mapchip() = default;
+	MapchipData();
+	~MapchipData() = default;
+
+	virtual void Draw() = 0;
 
 	void SetMapChip(vector<vector<int>> mapchip);
 

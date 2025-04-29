@@ -1,16 +1,16 @@
-#include "Mapchip.h"
+#include "MapchipData.h"
 
 using namespace EMapchip;
 
-Mapchip::Mapchip() {
+MapchipData::MapchipData() {
 	//chips_に各マップチップの情報を入れる
 	textureHandle_ = 0;
 }
 
-void Mapchip::SetMapChip(vector<vector<int>> mapchip) {
+void MapchipData::SetMapChip(vector<vector<int>> mapchip) {
 	mapchip_ = mapchip;
 }
 
-int Mapchip::GetChipKind(IVector2 pos) const {
+int MapchipData::GetChipKind(IVector2 pos) const {
 	return mapchip_[pos.y][pos.x];
 }
